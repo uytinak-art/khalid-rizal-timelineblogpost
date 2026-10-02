@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shaping of a Hero: The Life and Journey of Jose Rizal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            50: '#FAF7F2',
+                            100: '#F5EFE6',
+                            200: '#E8DFD0',
+                            300: '#D9CBBA',
+                            800: '#2C2621',
+                            900: '#1C1815',
+                        },
+                        heritage: {
+                            gold: '#C5A059',
+                            darkGold: '#A37F38',
+                            navy: '#0F172A',
+                            deepBlue: '#1E293B',
+                            burgundy: '#6B1D2F',
+                            sepia: '#704214',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5EFE6;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1C1815;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 4px;
+        }
+        .parchment-texture {
+            background-color: #FAF7F2;
+            background-image: radial-gradient(#E8DFD0 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+        .dark .parchment-texture {
+            background-color: #120F0D;
+            background-image: radial-gradient(#2C2621 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+        .serif-dropcap::first-letter {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            padding-right: 0.5rem;
+            color: #6B1D2F;
+            font-weight: 700;
+        }
+        .dark .serif-dropcap::first-letter {
+            color: #C5A059;
+        }
+    </style>
+</head>
+<body class="parchment-texture text-parchment-900 dark:text-parchment-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-300">
+
+    <header class="sticky top-0 z-40 bg-parchment-100/90 dark:bg-parchment-900/90 backdrop-blur-md border-b border-parchment-300 dark:border-parchment-800 shadow-sm transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Site Identity -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                    <div class="w-12 h-12 rounded-full bg-heritage-burgundy dark:bg-heritage-gold flex items-center justify-center text-white dark:text-parchment-900 font-cinzel font-bold text-xl shadow-md border-2 border-heritage-gold dark:border-heritage-burgundy">
+                        JR
+                    </div>
+                    <div>
+                        <h1 class="font-cinzel text-lg sm:text-xl font-bold tracking-wide text-heritage-burgundy dark:text-heritage-gold">
+                            THE SHAPING OF A HERO
+                        </h1>
+                        <p class="text-xs font-serif text-heritage-sepia dark:text-parchment-300 italic">
+                            The Life and Journey of Jose Rizal
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Academic Course Badge & Controls -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="text-right border-r border-parchment-300 dark:border-parchment-800 pr-4">
+                        <p class="text-xs font-semibold text-heritage-burgundy dark:text-heritage-gold uppercase tracking-wider">SS038 | M2 Summative</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Khalid Ibn Muamar C. Uytina</p>
+                    </div>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" onclick="toggleTheme()" class="p-2 rounded-lg bg-parchment-200 dark:bg-parchment-800 hover:bg-parchment-300 dark:hover:bg-parchment-800 transition" title="Toggle Theme">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden text-heritage-navy"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-heritage-gold"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center lg:hidden space-x-2">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-parchment-200 dark:bg-parchment-800">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden text-heritage-navy"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-heritage-gold"></i>
+                    </button>
+                    <button onclick="toggleMobileNav()" class="p-2 rounded-lg bg-heritage-burgundy text-white hover:bg-heritage-sepia transition">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="hidden lg:block bg-heritage-navy dark:bg-parchment-900 border-t border-heritage-gold/30">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex items-center justify-between space-x-1 overflow-x-auto py-2 text-xs font-medium uppercase tracking-wider text-parchment-100 scrollbar-none" id="desktopNav">
+                    <!-- Dynamic Nav Items Rendered by JS -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mobileDrawer" class="fixed inset-0 bg-black/60 z-50 hidden lg:hidden backdrop-blur-sm transition-opacity" onclick="toggleMobileNav()">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-parchment-100 dark:bg-parchment-900 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between" onclick="event.stopPropagation()">
+            <div>
+                <div class="flex items-center justify-between pb-4 mb-4 border-b border-parchment-300 dark:border-parchment-800">
+                    <span class="font-cinzel font-bold text-heritage-burgundy dark:text-heritage-gold">Navigation Menu</span>
+                    <button onclick="toggleMobileNav()" class="text-gray-500 hover:text-gray-800 dark:hover:text-white">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-1" id="mobileNavItems">
+                    <!-- Dynamic Mobile Nav Links -->
+                </div>
+            </div>
+            <div class="pt-6 border-t border-parchment-300 dark:border-parchment-800 text-xs text-gray-500 text-center">
+                <p class="font-semibold text-heritage-burgundy dark:text-heritage-gold">SS038 | Life and Works of Rizal</p>
+                <p class="mt-1">Prepared by Khalid Ibn Muamar C. Uytina</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8" id="appContent">
+        <!-- Dynamic Content Injected Here via JavaScript -->
+    </main>
+
+    <div id="timelineModal" class="fixed inset-0 bg-black/75 z-50 hidden flex items-center justify-center p-4 backdrop-blur-xs">
+        <div class="bg-parchment-100 dark:bg-parchment-900 border-2 border-heritage-gold rounded-xl max-w-xl w-full p-6 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeTimelineModal()" class="absolute top-4 right-4 text-gray-500 hover:text-heritage-burgundy dark:hover:text-heritage-gold">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="max-w-4xl w-full text-center relative" onclick="event.stopPropagation()">
+            <button onclick="closeImageModal()" class="absolute -top-10 right-0 text-white hover:text-heritage-gold">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <img id="lightboxImg" src="" alt="" class="max-h-[80vh] mx-auto rounded-lg shadow-2xl border-2 border-heritage-gold object-contain">
+            <div id="lightboxCaption" class="mt-4 text-parchment-100 font-serif italic text-lg px-4"></div>
+        </div>
+    </div>
+
+    <footer class="bg-heritage-navy text-parchment-200 border-t-4 border-heritage-gold mt-12 py-10 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-cinzel font-bold text-lg text-heritage-gold mb-3">The Shaping of a Hero</h3>
+                <p class="text-sm text-parchment-300 leading-relaxed font-serif">
+                    A comprehensive digital timeline and biographical study exploring the biological, environmental, and historical factors behind Dr. Jose Rizal's life and national contributions.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-cinzel font-bold text-lg text-heritage-gold mb-3">Course Submission Info</h3>
+                <ul class="text-sm space-y-1 text-parchment-300">
+                    <li><strong class="text-white">Student:</strong> Khalid Ibn Muamar C. Uytina</li>
+                    <li><strong class="text-white">Course Code:</strong> SS038</li>
+                    <li><strong class="text-white">Course Title:</strong> The Life and Works of Rizal</li>
+                    <li><strong class="text-white">Requirement:</strong> M2 Summative Assessment</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-cinzel font-bold text-lg text-heritage-gold mb-3">Academic Integrity</h3>
+                <p class="text-xs text-parchment-300 leading-relaxed">
+                    Designed for educational purposes in compliance with course rubrics. Synthesizes primary historical documents, standard biographical literature by Zaide & Guerrero, and authentic photographic references.
+                </p>
+                <div class="mt-4 flex items-center space-x-3 text-xs text-heritage-gold">
+                    <span class="inline-flex items-center"><i data-lucide="book-open" class="w-4 h-4 mr-1"></i> Academic Edition</span>
+                    <span class="inline-flex items-center"><i data-lucide="award" class="w-4 h-4 mr-1"></i> Revised Criteria</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
+            &copy; 2026 Khalid Ibn Muamar C. Uytina | SS038 Rizal Digital Timeline Interactive Portfolio.
+        </div>
+    </footer>
+
+    <script>
+        // Pages Data Structure
+        const pages = [
+            { id: 'home', title: 'Home', icon: 'home' },
+            { id: 'family', title: 'Family & Genealogy', icon: 'users' },
+            { id: 'education', title: 'Childhood & Education', icon: 'graduation-cap' },
+            { id: 'abroad', title: 'Life Abroad', icon: 'globe' },
+            { id: 'writings', title: 'Writings', icon: 'book-open' },
+            { id: 'homecoming', title: 'Homecoming & Travels', icon: 'compass' },
+            { id: 'dapitan', title: 'Dapitan Exile', icon: 'map-pin' },
+            { id: 'trial', title: 'Trial & Execution', icon: 'shield-alert' },
+            { id: 'character', title: 'Character Analysis', icon: 'brain' },
+            { id: 'pitfalls', title: 'Pitfalls & Heroism', icon: 'award' },
+            { id: 'legacy', title: 'Legacy & Reflection', icon: 'heart' },
+            { id: 'references', title: 'References', icon: 'file-text' }
+        ];
+
+        // State Management
+        let currentPage = 'home';
+
+        // Initialize Lucide Icons & App
+        window.addEventListener('DOMContentLoaded', () => {
+            renderNavigation();
+            switchPage('home');
+            lucide.createIcons();
+        });
+
+        // Toggle Dark/Light Theme
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Toggle Mobile Navigation Drawer
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobileDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // Render Desktop and Mobile Navigation Links
+        function renderNavigation() {
+            const desktopNav = document.getElementById('desktopNav');
+            const mobileNavItems = document.getElementById('mobileNavItems');
+
+            desktopNav.innerHTML = pages.map(p => `
+                <button onclick="switchPage('${p.id}')" 
+                        class="px-3 py-2 rounded-md font-medium text-nowrap transition-colors flex items-center space-x-1.5 ${currentPage === p.id ? 'bg-heritage-gold text-parchment-900 font-bold shadow' : 'hover:bg-heritage-navy/80 hover:text-heritage-gold text-parchment-200'}">
+                    <i data-lucide="${p.icon}" class="w-3.5 h-3.5"></i>
+                    <span>${p.title}</span>
+                </button>
+            `).join('');
+
+            mobileNavItems.innerHTML = pages.map(p => `
+                <button onclick="switchPage('${p.id}'); toggleMobileNav();" 
+                        class="w-full text-left px-4 py-3 rounded-lg font-medium transition flex items-center space-x-3 ${currentPage === p.id ? 'bg-heritage-burgundy text-white font-bold' : 'hover:bg-parchment-200 dark:hover:bg-parchment-800 text-parchment-900 dark:text-parchment-100'}">
+                    <i data-lucide="${p.icon}" class="w-5 h-5 text-heritage-gold"></i>
+                    <span>${p.title}</span>
+                </button>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function switchPage(pageId) {
+            currentPage = pageId;
+            renderNavigation();
+            const container = document.getElementById('appContent');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            switch (pageId) {
+                case 'home':
+                    container.innerHTML = renderHomePage();
+                    break;
+                case 'family':
+                    container.innerHTML = renderFamilyPage();
+                    break;
+                case 'education':
+                    container.innerHTML = renderEducationPage();
+                    break;
+                case 'abroad':
+                    container.innerHTML = renderAbroadPage();
+                    break;
+                case 'writings':
+                    container.innerHTML = renderWritingsPage();
+                    break;
+                case 'homecoming':
+                    container.innerHTML = renderHomecomingPage();
+                    break;
+                case 'dapitan':
+                    container.innerHTML = renderDapitanPage();
+                    break;
+                case 'trial':
+                    container.innerHTML = renderTrialPage();
+                    break;
+                case 'character':
+                    container.innerHTML = renderCharacterPage();
+                    break;
+                case 'pitfalls':
+                    container.innerHTML = renderPitfallsPage();
+                    break;
+                case 'legacy':
+                    container.innerHTML = renderLegacyPage();
+                    break;
+                case 'references':
+                    container.innerHTML = renderReferencesPage();
+                    break;
+                default:
+                    container.innerHTML = renderHomePage();
+            }
+            lucide.createIcons();
+        }
+
+        // ==========================================
+        // PAGE 1: HOME PAGE
+        // ==========================================
+        function renderHomePage() {
+            return `
+                <div class="space-y-12">
+                    <!-- Hero Banner -->
+                    <div class="relative bg-heritage-navy text-white rounded-2xl overflow-hidden shadow-2xl border-2 border-heritage-gold/40">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000')] bg-cover bg-center opacity-15 mix-blend-overlay"></div>
+                        <div class="relative p-8 sm:p-12 lg:p-16 space-y-6 max-w-4xl">
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 bg-heritage-gold/20 border border-heritage-gold text-heritage-gold rounded-full text-xs font-semibold uppercase tracking-widest">
+                                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                                <span>SS038 Summative Portfolio</span>
+                            </div>
+                            <h1 class="font-cinzel text-3xl sm:text-5xl font-extrabold text-heritage-gold leading-tight">
+                                The Shaping of a Hero: <br/>
+                                <span class="text-white italic font-serif">The Life and Journey of Jose Rizal</span>
+                            </h1>
+                            <p class="text-base sm:text-lg text-parchment-200 font-serif leading-relaxed">
+                                A Comprehensive Digital Timeline Exploring the Biological, Environmental, and Historical Foundations of the Philippine National Hero.
+                            </p>
+
+                            <!-- Academic Metadata Card -->
+                            <div class="pt-6 border-t border-parchment-300/20 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-parchment-300 font-sans">
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider text-heritage-gold">Prepared By:</span>
+                                    <strong class="text-white font-medium text-base">Khalid Ibn Muamar C. Uytina</strong>
+                                </div>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider text-heritage-gold">Course & Section:</span>
+                                    <strong class="text-white font-medium text-base">SS038 | The Life and Works of Rizal</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Introduction Narrative -->
+                    <div class="bg-parchment-100 dark:bg-parchment-800/60 rounded-xl p-6 sm:p-10 border border-parchment-300 dark:border-parchment-800 shadow-md space-y-4">
+                        <h2 class="font-cinzel text-2xl font-bold text-heritage-burgundy dark:text-heritage-gold border-b border-heritage-gold/30 pb-3 flex items-center">
+                            <i data-lucide="feather" class="w-6 h-6 mr-2"></i> Executive Introduction
+                        </h2>
+                        <p class="serif-dropcap text-base sm:text-lg leading-relaxed font-serif text-gray-800 dark:text-parchment-100">
+                            Jose Rizal is widely revered as the pinnacle hero in Philippine history. However, greatness is rarely forged in isolation or overnight. His evolution was a painstaking synthesis of nurture, rigid academic discipline, personal grief, and acute observations of Spanish colonial injustices. Rizal was multifaceted—an accomplished ophthalmologist, prolific novelist, linguist, sculptor, and peaceful reformist whose intellectual labor laid the ideological groundwork for national consciousness.
+                        </p>
+                        <p class="text-base leading-relaxed font-serif text-gray-700 dark:text-parchment-200">
+                            This digital timeline chronologically reconstructs the crucial turning points of Rizal's journey. By examining his lineage, early childhood, European travels, seminal novels, Dapitan exile, and ultimate martyrdom, we reveal that heroism is not merely an innate gift, but a deliberate lifetime choice rooted in knowledge, moral courage, and selflessness.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Quick Timeline Grid -->
+                    <div class="space-y-6">
+                        <div class="text-center max-w-2xl mx-auto">
+                            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-heritage-burgundy dark:text-heritage-gold">
+                                Interactive Chronological Timeline
+                            </h2>
+                            <p class="text-sm font-serif text-gray-600 dark:text-parchment-300 mt-2">
+                                Click any node to open key historical details and context.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${quickTimelineData.map((item, idx) => `
+                                <div onclick="openTimelineModal(${idx})" 
+                                     class="group cursor-pointer bg-white dark:bg-parchment-900 border border-parchment-300 dark:border-parchment-800 rounded-xl p-5 shadow-sm hover:shadow-xl hover:border-heritage-gold transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 w-2 h-full bg-heritage-burgundy group-hover:bg-heritage-gold transition-colors"></div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="px-2.5 py-1 bg-heritage-gold/15 text-heritage-burgundy dark:text-heritage-gold font-bold font-cinzel text-xs rounded-md">
+                                            ${item.date}
+                                        </span>
+                                        <i data-lucide="${item.icon}" class="w-5 h-5 text-heritage-gold group-hover:scale-110 transition-transform"></i>
+                                    </div>
+                                    <h3 class="font-cinzel font-bold text-base text-heritage-navy dark:text-parchment-100 group-hover:text-heritage-burgundy dark:group-hover:text-heritage-gold transition-colors">
+                                        ${item.title}
+                                    </h3>
+                                    <p class="text-xs text-gray-600 dark:text-parchment-300 font-serif mt-2 line-clamp-2">
+                                        ${item.summary}
+                                    </p>
+                                    <div class="mt-4 pt-3 border-t border-gray-100 dark:border-parchment-800 flex items-center justify-between text-xs text-heritage-burgundy dark:text-heritage-gold font-semibold">
+                                        <span>Read Summary</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Quick Timeline Data Object
+        const quickTimelineData = [
+            { date: '1861', title: 'Birth in Calamba', icon: 'baby', summary: 'Born on June 19, 1861, in Calamba, Laguna to Francisco Mercado and Teodora Alonso.', details: 'Jose Rizal was born into a prosperous land-leasing family in Calamba. His early environment fostered religious devotion, love for literature, and respect for nature.' },
+            { date: 'Childhood', title: 'Family & Early Learning', icon: 'heart', summary: 'Early lessons at home with his mother Teodora Alonso, his first teacher.', details: 'Teodora Alonso taught Jose how to read and pray. The tragic story of the moth planted early reflections regarding passion and truth.' },
+            { date: 'Education', title: 'Biñan, Ateneo & UST', icon: 'graduation-cap', summary: 'Formal schooling in Biñan followed by academic triumphs at Ateneo and UST.', details: 'Achieved highest academic honors (Sobresaliente) at Ateneo Municipal, mastering arts and sciences before studying medicine at UST.' },
+            { date: '1882', title: 'First Travel Abroad', icon: 'ship', summary: 'Secret departure to Spain to complete medical studies and observe European society.', details: 'Boarded the SS Salvadora for Spain. Authored "El Amor Patrio" in Barcelona under the pen name Laong Laan.' },
+            { date: '1887', title: 'Noli Me Tangere', icon: 'book', summary: 'Publication of his first novel in Berlin, exposing colonial social cancers.', details: 'Financed with help from Maximo Viola. The masterpiece exposed friar corruption and social injustices under Spanish rule.' },
+            { date: '1887', title: 'First Homecoming', icon: 'home', summary: 'Return to the Philippines to practice ophthalmology and defend the novel.', details: 'Operated on his mother’s eyes in Calamba. Tension mounted as friars condemned Noli Me Tangere as heretical.' },
+            { date: '1888', title: 'Second Travel Abroad', icon: 'globe', summary: 'Journeying through Japan, US, and London for research and propaganda.', details: 'Annotated Antonio de Morga’s Sucesos de las Islas Filipinas at the British Museum to prove rich pre-colonial Filipino history.' },
+            { date: '1891', title: 'El Filibusterismo', icon: 'flame', summary: 'Publication of his dark second novel in Ghent, Belgium.', details: 'Dedicated to the martyred priests Gomburza. Investigated the consequences of violent revolution vs educated reform.' },
+            { date: '1892', title: 'La Liga & Arrest', icon: 'lock', summary: 'Founding of La Liga Filipina in Tondo and subsequent arrest by authorities.', details: 'Established a peaceful civic society on July 3, 1892. Days later, he was arrested and incarcerated in Fort Santiago.' },
+            { date: '1892-1896', title: 'Exile in Dapitan', icon: 'map-pin', summary: 'Four years of transformative exile in Zamboanga del Norte.', details: 'Built a school, water system, relief map, and medical clinic, demonstrating civic leadership despite restricted freedom.' },
+            { date: '1896', title: 'Trial & Execution', icon: 'crosshair', summary: 'Framed for rebellion, court-martialed, and executed at Bagumbayan.', details: 'Penned Mi Último Adiós on the eve of execution. Executed by firing squad on December 30, 1896, inspiring national revolution.' },
+            { date: 'Legacy', title: 'Nationalism & Heroism', icon: 'award', summary: 'Enduring impact as the premier Philippine national hero.', details: 'Rizal proved that education, literature, and moral integrity are potent weapons against tyranny.' }
+        ];
+
+        function openTimelineModal(idx) {
+            const data = quickTimelineData[idx];
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 border-b border-parchment-300 dark:border-parchment-800 pb-3">
+                        <span class="px-3 py-1 bg-heritage-burgundy text-white font-cinzel font-bold text-xs rounded-full">${data.date}</span>
+                        <h3 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-heritage-gold">${data.title}</h3>
+                    </div>
+                    <p class="font-serif text-base text-gray-800 dark:text-parchment-100 leading-relaxed">${data.details}</p>
+                    <div class="pt-4 flex justify-end">
+                        <button onclick="closeTimelineModal()" class="px-4 py-2 bg-heritage-gold text-parchment-900 font-bold rounded-lg hover:bg-heritage-darkGold transition">
+                            Close Context
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('timelineModal').classList.remove('hidden');
+        }
+
+        function closeTimelineModal() {
+            document.getElementById('timelineModal').classList.add('hidden');
+        }
+
+        // ==========================================
+        // PAGE 2: FAMILY & GENEALOGY
+        // ==========================================
+        function renderFamilyPage() {
+            return `
+                <div class="space-y-10">
+                    <!-- Page Header -->
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 2 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Rizal's Family and Genealogy
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            Biological inclinations and environmental nurtance within the Mercado-Alonso Household.
+                        </p>
+                    </div>
+
+                    <!-- Parents Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Father Card -->
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 shadow-md border-l-4 border-heritage-burgundy space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="p-3 bg-heritage-burgundy/10 rounded-full text-heritage-burgundy dark:text-heritage-gold">
+                                    <i data-lucide="user" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">Francisco Mercado Rizal</h2>
+                                    <p class="text-xs text-gray-500 dark:text-parchment-300 italic">1818 – 1898 | Father</p>
+                                </div>
+                            </div>
+                            <p class="text-sm font-serif leading-relaxed text-gray-700 dark:text-parchment-200">
+                                An industrious, educated tenant farmer from Biñan who leased sugar land from the Dominican order in Calamba. Francisco imparted values of hard work, self-respect, quiet dignity, and financial prudence to Jose.
+                            </p>
+                        </div>
+
+                        <!-- Mother Card -->
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 shadow-md border-l-4 border-heritage-gold space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="p-3 bg-heritage-gold/15 rounded-full text-heritage-gold">
+                                    <i data-lucide="heart" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">Teodora Alonso Realonda</h2>
+                                    <p class="text-xs text-gray-500 dark:text-parchment-300 italic">1827 – 1911 | Mother & First Teacher</p>
+                                </div>
+                            </div>
+                            <p class="text-sm font-serif leading-relaxed text-gray-700 dark:text-parchment-200">
+                                A highly educated woman from Colegio de Santa Rosa in Manila. Teodora was Jose's primary teacher, instilling a passion for literature, poetry, rhetoric, and deep Catholic devotion during his formative years.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Siblings & Paciano Section -->
+                    <div class="bg-parchment-100 dark:bg-parchment-800/50 rounded-xl p-6 sm:p-8 border border-parchment-300 dark:border-parchment-800 space-y-4">
+                        <h2 class="font-cinzel text-xl font-bold text-heritage-burgundy dark:text-heritage-gold flex items-center">
+                            <i data-lucide="users" class="w-5 h-5 mr-2"></i> The Sibling Dynamics & Paciano's Influence
+                        </h2>
+                        <p class="text-sm sm:text-base font-serif leading-relaxed text-gray-800 dark:text-parchment-100">
+                            Jose was the 7th of 11 children (Saturnina, Paciano, Narcisa, Olimpia, Lucia, Maria, Jose, Concepcion, Josefa, Trinidad, and Soledad). Among them, his older brother <strong>Paciano Rizal</strong> acted as a second father, mentor, and financial benefactor.
+                        </p>
+                        <p class="text-sm sm:text-base font-serif leading-relaxed text-gray-700 dark:text-parchment-200">
+                            Paciano was a student of Fr. Jose Burgos (martyred in 1872), and he transmitted early concepts of anti-colonial consciousness and social critique to young Jose, supporting his secret studies in Europe.
+                        </p>
+                    </div>
+
+                    <!-- Biological vs Environmental Matrix -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-3">
+                            <h3 class="font-cinzel font-bold text-base text-heritage-navy dark:text-heritage-gold flex items-center">
+                                <i data-lucide="dna" class="w-5 h-5 mr-2 text-heritage-burgundy"></i> Biological Factors
+                            </h3>
+                            <ul class="text-xs sm:text-sm font-serif space-y-2 text-gray-700 dark:text-parchment-200 list-disc list-inside">
+                                <li>Inherited Chinese, Spanish, Japanese, and Malay intellectual traits.</li>
+                                <li>Natural artistic predisposition towards sketching, sculpting, and verse composition.</li>
+                                <li>Fragile childhood physical constitution, compensated through deliberate physical training and martial arts.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-3">
+                            <h3 class="font-cinzel font-bold text-base text-heritage-navy dark:text-heritage-gold flex items-center">
+                                <i data-lucide="trees" class="w-5 h-5 mr-2 text-heritage-gold"></i> Environmental Factors
+                            </h3>
+                            <ul class="text-xs sm:text-sm font-serif space-y-2 text-gray-700 dark:text-parchment-200 list-disc list-inside">
+                                <li>Picturesque landscape of Calamba and Mt. Makiling stirring literary romance.</li>
+                                <li>Comprehensive private home library consisting of over 1,000 volumes.</li>
+                                <li>Traumatic injustice of his mother's arrest in 1871 and the 1872 Gomburza martyrdom.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 3: CHILDHOOD & EDUCATION
+        // ==========================================
+        function renderEducationPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 3 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Childhood and Education
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            From the shores of Laguna de Bay to the lecture halls of Ateneo and Santo Tomas.
+                        </p>
+                    </div>
+
+                    <!-- Childhood & Story of the Moth -->
+                    <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 sm:p-8 shadow-md border-l-4 border-heritage-burgundy space-y-4">
+                        <h2 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-heritage-gold flex items-center">
+                            <i data-lucide="book-open" class="w-5 h-5 mr-2"></i> Early Childhood & The Story of the Moth
+                        </h2>
+                        <p class="text-sm sm:text-base font-serif leading-relaxed text-gray-700 dark:text-parchment-200">
+                            Jose's early years in Calamba were filled with natural wonder. Among his most lasting early memories was a lesson taught by his mother, reading from *El Amigo de los Niños*.
+                        </p>
+                        <blockquote class="p-4 bg-parchment-100 dark:bg-parchment-800 rounded-lg italic text-xs sm:text-sm font-serif border-l-2 border-heritage-gold text-gray-800 dark:text-parchment-100">
+                            "The young moth was attracted to the flame, fascinated by its radiant light despite warnings. It flew too close and died in the fire."
+                        </blockquote>
+                        <p class="text-sm font-serif text-gray-700 dark:text-parchment-200">
+                            Young Rizal internalized this event: to sacrifice one's life in pursuit of light and truth was not a foolish tragedy, but a noble destiny.
+                        </p>
+                    </div>
+
+                    <!-- Academic Timeline Steps -->
+                    <div class="space-y-6">
+                        <!-- Biñan -->
+                        <div class="flex flex-col sm:flex-row gap-4 bg-parchment-100 dark:bg-parchment-800/40 p-5 rounded-xl border border-parchment-300 dark:border-parchment-800">
+                            <div class="sm:w-1/4 font-cinzel font-bold text-heritage-burgundy dark:text-heritage-gold">
+                                <span class="block text-xl">1869 - 1871</span>
+                                <span class="text-xs uppercase tracking-wider text-gray-500">Biñan Primary</span>
+                            </div>
+                            <div class="sm:w-3/4 space-y-2">
+                                <h3 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">First Formal Schooling under Maestro Justiniano Aquino Cruz</h3>
+                                <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200">
+                                    Enrolled in Biñan under a strict disciplinarian. Despite occasional beatings common in 19th-century education, Jose excelled rapidly, surpassing all local classmates in Latin and Spanish.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ateneo -->
+                        <div class="flex flex-col sm:flex-row gap-4 bg-parchment-100 dark:bg-parchment-800/40 p-5 rounded-xl border border-parchment-300 dark:border-parchment-800">
+                            <div class="sm:w-1/4 font-cinzel font-bold text-heritage-burgundy dark:text-heritage-gold">
+                                <span class="block text-xl">1872 - 1877</span>
+                                <span class="text-xs uppercase tracking-wider text-gray-500">Ateneo Municipal</span>
+                            </div>
+                            <div class="sm:w-3/4 space-y-2">
+                                <h3 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">Jesuit Discipline & Academic Supremacy</h3>
+                                <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200">
+                                    Entered Ateneo Municipal in Manila. Graduated Bachelor of Arts with Highest Honors (*Sobresaliente*). Won medals in poetry (*Por la Educación Recibe Lustre la Patria*), philosophy, and sculpting under Jesuit guidance.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- UST -->
+                        <div class="flex flex-col sm:flex-row gap-4 bg-parchment-100 dark:bg-parchment-800/40 p-5 rounded-xl border border-parchment-300 dark:border-parchment-800">
+                            <div class="sm:w-1/4 font-cinzel font-bold text-heritage-burgundy dark:text-heritage-gold">
+                                <span class="block text-xl">1877 - 1882</span>
+                                <span class="text-xs uppercase tracking-wider text-gray-500">Univ. of Santo Tomas</span>
+                            </div>
+                            <div class="sm:w-3/4 space-y-2">
+                                <h3 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">Philosophy, Letters & Medicine</h3>
+                                <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200">
+                                    Initially studied Philosophy and Letters before switching to Medicine (Ophthalmology) upon learning of his mother's impending blindness. Faced racial discrimination from Dominican professors, prompting his secret voyage to Spain.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 4: LIFE ABROAD
+        // ==========================================
+        function renderAbroadPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 4 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Life Abroad: European Sojourn
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            Madrid, Paris, Heidelberg, and Berlin — Intellectual growth in Europe.
+                        </p>
+                    </div>
+
+                    <!-- European Journey Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-3">
+                            <div class="text-heritage-burgundy dark:text-heritage-gold">
+                                <i data-lucide="compass" class="w-8 h-8"></i>
+                            </div>
+                            <h2 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">Spain (1882)</h2>
+                            <p class="text-xs text-gray-500 dark:text-parchment-300">Barcelona & Madrid</p>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Arrived in Barcelona and wrote "El Amor Patrio" under the pen name *Laong Laan*. Enrolled at Universidad Central de Madrid, earning Licentiate degrees in Medicine and Philosophy.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-3">
+                            <div class="text-heritage-gold">
+                                <i data-lucide="eye" class="w-8 h-8"></i>
+                            </div>
+                            <h2 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">France (1885)</h2>
+                            <p class="text-xs text-gray-500 dark:text-parchment-300">Paris Specialization</p>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Worked as an assistant clinical ophthalmologist under the famous Dr. Louis de Wecker in Paris, perfecting delicate surgical techniques for cataracts.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-3">
+                            <div class="text-heritage-burgundy dark:text-heritage-gold">
+                                <i data-lucide="book" class="w-8 h-8"></i>
+                            </div>
+                            <h2 class="font-cinzel font-bold text-lg text-heritage-navy dark:text-parchment-100">Germany (1886-87)</h2>
+                            <p class="text-xs text-gray-500 dark:text-parchment-300">Heidelberg & Berlin</p>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Trained under Dr. Otto Becker in Heidelberg. Wrote "A Las Flores de Heidelberg". Befriended Dr. Ferdinand Blumentritt and finished *Noli Me Tangere* in Berlin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Blumentritt Alliance -->
+                    <div class="bg-parchment-100 dark:bg-parchment-800/60 p-6 sm:p-8 rounded-xl border border-parchment-300 dark:border-parchment-800 flex flex-col md:flex-row items-center gap-6">
+                        <div class="p-4 bg-heritage-navy text-heritage-gold rounded-full shrink-0">
+                            <i data-lucide="mail" class="w-10 h-10"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-cinzel font-bold text-xl text-heritage-navy dark:text-heritage-gold">The Friendship with Ferdinand Blumentritt</h3>
+                            <p class="text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Rizal initiated correspondence with Professor Ferdinand Blumentritt, an Austrian ethnographer in Leitmeritz. Their deep correspondence bridged European academia and Philippine reform, establishing a lifelong intellectual brotherhood.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 5: WRITINGS
+        // ==========================================
+        function renderWritingsPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 5 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Literary Masterpieces & Writings
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            The twin literary pillars that awakened Philippine national consciousness.
+                        </p>
+                    </div>
+
+                    <!-- Novel Comparison Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Noli Me Tangere -->
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 sm:p-8 shadow-md border-t-4 border-heritage-burgundy space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-heritage-burgundy/10 text-heritage-burgundy dark:text-heritage-gold text-xs font-bold font-cinzel rounded-md">Berlin, 1887</span>
+                                <i data-lucide="feather" class="w-6 h-6 text-heritage-burgundy dark:text-heritage-gold"></i>
+                            </div>
+                            <h2 class="font-cinzel text-2xl font-bold text-heritage-navy dark:text-parchment-100">Noli Me Tangere</h2>
+                            <p class="text-xs text-gray-500 dark:text-parchment-300 italic">"Touch Me Not" — The Social Cancer</p>
+                            <p class="text-sm font-serif leading-relaxed text-gray-700 dark:text-parchment-200">
+                                Written in Spanish and published with financial aid from Maximo Viola. It exposed colonial hypocrisy, friar abuses, and civic apathy through the tragic story of Crisostomo Ibarra and Maria Clara.
+                            </p>
+                            <div class="pt-4 border-t border-gray-100 dark:border-parchment-800 text-xs font-serif text-heritage-sepia dark:text-parchment-300 italic">
+                                Key Theme: Diagnosis of societal ills, belief in reform through education.
+                            </div>
+                        </div>
+
+                        <!-- El Filibusterismo -->
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 sm:p-8 shadow-md border-t-4 border-heritage-gold space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-heritage-gold/20 text-heritage-darkGold dark:text-heritage-gold text-xs font-bold font-cinzel rounded-md">Ghent, 1891</span>
+                                <i data-lucide="flame" class="w-6 h-6 text-heritage-gold"></i>
+                            </div>
+                            <h2 class="font-cinzel text-2xl font-bold text-heritage-navy dark:text-parchment-100">El Filibusterismo</h2>
+                            <p class="text-xs text-gray-500 dark:text-parchment-300 italic">"The Subversive" — The Reign of Greed</p>
+                            <p class="text-sm font-serif leading-relaxed text-gray-700 dark:text-parchment-200">
+                                Dedicated to the martyred Gomburza fathers and published with help from Valentin Ventura. Features Simoun, a disillusioned Ibarra seeking revenge through violent revolution.
+                            </p>
+                            <div class="pt-4 border-t border-gray-100 dark:border-parchment-800 text-xs font-serif text-heritage-sepia dark:text-parchment-300 italic">
+                                Key Theme: Warning against ill-prepared revolution; necessity of moral fitness.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 6: HOMECOMING & SECOND TRAVEL
+        // ==========================================
+        function renderHomecomingPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 6 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Homecoming & Second Travel
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            Calamba medical clinic, controversy, and global research in London and America.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 shadow-md border-l-4 border-heritage-burgundy space-y-3">
+                            <span class="text-xs font-bold text-heritage-burgundy dark:text-heritage-gold font-cinzel">August 1887 – February 1888</span>
+                            <h2 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-parchment-100">First Homecoming ("Doctor Uliman")</h2>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Rizal returned home to operate on his mother's eyes and established a medical practice in Calamba. Known locally as "Doctor Uliman" (German Doctor), he gained immense popularity while investigating the agrarian grievances of Calamba tenants against Dominican estates.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 shadow-md border-l-4 border-heritage-gold space-y-3">
+                            <span class="text-xs font-bold text-heritage-gold font-cinzel">1888 – 1892</span>
+                            <h2 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-parchment-100">Second Travel & Morga Annotations</h2>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Due to death threats, Rizal departed again via Japan and the US, arriving in London. At the British Museum, he transcribed and annotated Antonio de Morga's *Sucesos de las Islas Filipinas*, proving Filipinos possessed an advanced culture prior to Spanish arrival.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 7: DAPITAN EXILE (WITH PHOTO GALLERY)
+        // ==========================================
+        function renderDapitanPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 7 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            La Liga Filipina & Dapitan Exile (1892–1896)
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            Civic leadership, educational reforms, and community developments in Zamboanga del Norte.
+                        </p>
+                    </div>
+
+                    <!-- La Liga & Arrest Context -->
+                    <div class="bg-parchment-100 dark:bg-parchment-800/60 p-6 rounded-xl border border-parchment-300 dark:border-parchment-800 space-y-3">
+                        <h2 class="font-cinzel text-xl font-bold text-heritage-burgundy dark:text-heritage-gold">Founding of La Liga Filipina</h2>
+                        <p class="text-sm font-serif text-gray-800 dark:text-parchment-100 leading-relaxed">
+                            On July 3, 1892, Rizal founded <em>La Liga Filipina</em> in Tondo, Manila, advocating for national unity, mutual defense, and education. Four days later, he was arrested under orders from Governor-General Eulogio Despujol and exiled to Dapitan.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Photo Gallery Cards -->
+                    <div class="space-y-4">
+                        <h2 class="font-cinzel text-2xl font-bold text-heritage-navy dark:text-heritage-gold flex items-center">
+                            <i data-lucide="camera" class="w-6 h-6 mr-2"></i> Dapitan Historical Photo Gallery
+                        </h2>
+                        <p class="text-xs sm:text-sm font-serif text-gray-600 dark:text-parchment-300">
+                            Click any image card to enlarge and view detailed historical context.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${dapitanPhotos.map((photo) => `
+                                <div onclick="openImageModal('${photo.url}', '${photo.title}: ${photo.caption}')" 
+                                     class="group cursor-pointer bg-white dark:bg-parchment-900 border border-parchment-300 dark:border-parchment-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                                    <div class="h-48 overflow-hidden relative">
+                                        <img src="${photo.url}" alt="${photo.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                                        <span class="absolute bottom-2 right-2 bg-heritage-navy/80 text-heritage-gold p-1.5 rounded-full">
+                                            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                                        </span>
+                                    </div>
+                                    <div class="p-4 space-y-2">
+                                        <h3 class="font-cinzel font-bold text-base text-heritage-navy dark:text-parchment-100 group-hover:text-heritage-burgundy dark:group-hover:text-heritage-gold transition-colors">
+                                            ${photo.title}
+                                        </h3>
+                                        <p class="text-xs font-serif text-gray-600 dark:text-parchment-300 line-clamp-2">
+                                            ${photo.caption}
+                                        </p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Dapitan Photo Array
+        const dapitanPhotos = [
+            {
+                title: "Museo ni Jose Rizal Dapitan",
+                url: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=800",
+                caption: "The central museum in Dapitan preserving Rizal's instruments, personal artifacts, and literary drafts during his four years of exile."
+            },
+            {
+                title: "Rizal's Residence (Casa Residencial)",
+                url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800",
+                caption: "Reconstructed octagonal and square bamboo-and-nipa houses where Rizal lived, studied, and hosted visiting family members."
+            },
+            {
+                title: "Rizal's Clinic (Casa Redonda)",
+                url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800",
+                caption: "The octagonal clinic where Dr. Rizal performed free eye surgeries for local patients and treated international visitors like George Taufer."
+            },
+            {
+                title: "Porch of the Residence",
+                url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800",
+                caption: "The outdoor study porch where Rizal composed poetry (*Mi Retiro*), tutored young boys, and conducted scientific specimen collections."
+            },
+            {
+                title: "Rizal and Dr. Pio Valenzuela Statue",
+                url: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800",
+                caption: "Commemorative statue depicting the secret June 1896 meeting where Dr. Pio Valenzuela sought Rizal's approval for the Katipunan revolution."
+            }
+        ];
+
+        function openImageModal(url, caption) {
+            document.getElementById('lightboxImg').src = url;
+            document.getElementById('lightboxCaption').innerText = caption;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // ==========================================
+        // PAGE 8: TRIAL & EXECUTION
+        // ==========================================
+        function renderTrialPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 8 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Trial and Execution (1896)
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            The military court-martial, Mi Último Adiós, and martyrdom at Bagumbayan.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 shadow-md border-l-4 border-heritage-burgundy space-y-3">
+                            <h2 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-parchment-100">The Military Trial</h2>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                Charged with rebellion, sedition, and illegal association. Despite brilliant defense by Lt. Luis Taviel de Andrade proving Rizal had no direct link to Bonifacio's Katipunan uprising, Spanish authorities sentenced him to death.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 shadow-md border-l-4 border-heritage-gold space-y-3">
+                            <h2 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-parchment-100">December 30, 1896 — Execution</h2>
+                            <p class="text-xs sm:text-sm font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                                At 7:00 AM on Bagumbayan Field (Luneta), Rizal was shot in the back by a firing squad. As shots rang out, he turned to face the morning sun, uttering his final words: <em>"Consummatum est!"</em> (It is finished!).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 9: CHARACTER ANALYSIS
+        // ==========================================
+        function renderCharacterPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 9 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Character Analysis: Strengths & Weaknesses
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            A balanced biographical assessment of Rizal's virtues and human limitations.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-4">
+                            <h2 class="font-cinzel text-xl font-bold text-heritage-burgundy dark:text-heritage-gold flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i> Notable Strengths
+                            </h2>
+                            <ul class="text-xs sm:text-sm font-serif space-y-2.5 text-gray-700 dark:text-parchment-200 list-disc list-inside">
+                                <li><strong>Polymathic Genius:</strong> Mastered 22 languages, ophthalmology, poetry, and sculpture.</li>
+                                <li><strong>Moral Courage:</strong> Willingness to publish truth at great personal risk.</li>
+                                <li><strong>Self-Discipline:</strong> Strict time management and dedication to lifelong learning.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-parchment-900 p-6 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-4">
+                            <h2 class="font-cinzel text-xl font-bold text-heritage-gold flex items-center">
+                                <i data-lucide="alert-circle" class="w-5 h-5 mr-2"></i> Shortcomings & Human Limits
+                            </h2>
+                            <ul class="text-xs sm:text-sm font-serif space-y-2.5 text-gray-700 dark:text-parchment-200 list-disc list-inside">
+                                <li><strong>Bourgeois Reformism:</strong> Hesitation to endorse premature armed revolution without sufficient arms and preparation.</li>
+                                <li><strong>Idealistic Expectations:</strong> High expectations regarding Spanish willingness to grant peaceful reforms.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 10: PITFALLS & HEROISM
+        // ==========================================
+        function renderPitfallsPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 10 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Pitfalls and the Path to Heroism
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            How overcoming adversity defined Rizal's legacy.
+                        </p>
+                    </div>
+
+                    <div class="bg-parchment-100 dark:bg-parchment-800/60 p-6 sm:p-8 rounded-xl border border-parchment-300 dark:border-parchment-800 space-y-4">
+                        <h2 class="font-cinzel text-2xl font-bold text-heritage-navy dark:text-heritage-gold">Challenges Faced by Rizal</h2>
+                        <p class="text-sm sm:text-base font-serif text-gray-800 dark:text-parchment-100 leading-relaxed">
+                            Rizal's journey was plagued by constant hardship: the eviction of his family during the Calamba agrarian land dispute, financial starvation while publishing in Europe, betrayal by associates, exile in Dapitan, and eventual execution.
+                        </p>
+                        <p class="text-sm sm:text-base font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                            <strong>Contribution to Heroism:</strong> These trials proved that Rizal's devotion was not born out of political ambition, but out of genuine love for his people. True heroism lies in standing for truth despite overwhelming adversity.
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 11: LEGACY & REFLECTION
+        // ==========================================
+        function renderLegacyPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 11 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Legacy and Personal Reflection
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            Personal reflections by Khalid Ibn Muamar C. Uytina for course SS038.
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-parchment-900 rounded-xl p-6 sm:p-8 shadow-md border-l-4 border-heritage-burgundy space-y-4">
+                        <h2 class="font-cinzel text-xl font-bold text-heritage-navy dark:text-heritage-gold">Personal Reflection</h2>
+                        <p class="serif-dropcap text-sm sm:text-base font-serif text-gray-800 dark:text-parchment-100 leading-relaxed">
+                            Studying Jose Rizal's life for course SS038 reveals that heroism is not defined by physical strength or battlefield victories alone. Rizal proved that the pen, moral integrity, and commitment to education are equally powerful tools for national liberation.
+                        </p>
+                        <p class="text-sm sm:text-base font-serif text-gray-700 dark:text-parchment-200 leading-relaxed">
+                            As modern students, Rizal's life challenges us to utilize our education not merely for personal advancement, but to address contemporary social issues and serve our communities with integrity.
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==========================================
+        // PAGE 12: REFERENCES
+        // ==========================================
+        function renderReferencesPage() {
+            return `
+                <div class="space-y-10">
+                    <div class="border-b-2 border-heritage-gold pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-heritage-burgundy dark:text-heritage-gold">Page 12 of 12</span>
+                        <h1 class="font-cinzel text-3xl sm:text-4xl font-bold text-heritage-navy dark:text-parchment-100">
+                            Academic References (APA Style)
+                        </h1>
+                        <p class="text-sm font-serif text-heritage-sepia dark:text-parchment-300 italic mt-1">
+                            Primary literature, course syllabi, and biographical references for course SS038.
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-parchment-900 p-6 sm:p-8 rounded-xl shadow-sm border border-parchment-300 dark:border-parchment-800 space-y-4">
+                        <ul class="text-xs sm:text-sm font-serif space-y-3 text-gray-800 dark:text-parchment-100 list-disc list-inside">
+                            <li>Guerrero, L. M. (1963). <em>The First Filipino: A Biography of José Rizal</em>. National Historical Commission of the Philippines.</li>
+                            <li>Rizal, J. (1887). <em>Noli Me Tangere</em>. Berliner Buchdruckerei-Actien-Gesellschaft.</li>
+                            <li>Rizal, J. (1891). <em>El Filibusterismo</em>. F. Meyer-Van Loo Press.</li>
+                            <li>Zaide, G. F., & Zaide, S. M. (2008). <em>Jose Rizal: Life, Works, and Writings of a Genius, Writer, Scientist, and Hero</em>. All-Nations Publishing Co., Inc.</li>
+                            <li>SS038 Course Syllabus & Module 2 Summative Guidelines (2025). <em>The Life and Works of Rizal</em>. Department of Social Sciences.</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
